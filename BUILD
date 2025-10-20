@@ -3002,6 +3002,7 @@ grpc_cc_library(
 
 grpc_cc_library(
     name = "grpcpp_csds",
+    testonly = True,
     srcs = [
         "src/cpp/server/csds/csds.cc",
     ],
@@ -3017,13 +3018,14 @@ grpc_cc_library(
         "gpr",
         "grpc",
         "grpc++_base",
-        "//src/proto/grpc/testing/xds/v3:csds_cc_grpc",
+        "@envoy_api//envoy/service/status/v3:pkg_cc_grpc",
     ],
     alwayslink = 1,
 )
 
 grpc_cc_library(
     name = "grpcpp_admin",
+    testonly = True,
     srcs = [
         "src/cpp/server/admin/admin_services.cc",
     ],

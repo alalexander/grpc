@@ -321,6 +321,7 @@ sh_test(
 
 grpc_cc_library(
     name = "xds_stats_watcher",
+    testonly = True,
     srcs = ["xds_stats_watcher.cc"],
     hdrs = ["xds_stats_watcher.h"],
     external_deps = [
@@ -360,6 +361,7 @@ grpc_cc_test(
 
 grpc_cc_binary(
     name = "xds_interop_client",
+    testonly = True,
     srcs = [
         "xds_interop_client.cc",
     ],
@@ -488,6 +490,7 @@ grpc_cc_test(
 
 grpc_cc_library(
     name = "istio_echo_server_lib",
+    testonly = True,
     srcs = [
         "istio_echo_server_lib.cc",
     ],
@@ -508,6 +511,7 @@ grpc_cc_library(
 
 grpc_cc_binary(
     name = "istio_echo_server",
+    testonly = True,
     srcs = [
         "istio_echo_server.cc",
     ],

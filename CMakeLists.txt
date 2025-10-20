@@ -786,18 +786,6 @@ protobuf_generate_grpc_cpp_with_import_path_correction(
   src/proto/grpc/testing/worker_service.proto src/proto/grpc/testing/worker_service.proto
 )
 protobuf_generate_grpc_cpp_with_import_path_correction(
-  src/proto/grpc/testing/xds/v3/ads.proto src/proto/grpc/testing/xds/v3/ads.proto
-)
-protobuf_generate_grpc_cpp_with_import_path_correction(
-  src/proto/grpc/testing/xds/v3/csds.proto src/proto/grpc/testing/xds/v3/csds.proto
-)
-protobuf_generate_grpc_cpp_with_import_path_correction(
-  src/proto/grpc/testing/xds/v3/discovery.proto src/proto/grpc/testing/xds/v3/discovery.proto
-)
-protobuf_generate_grpc_cpp_with_import_path_correction(
-  src/proto/grpc/testing/xds/v3/lrs.proto src/proto/grpc/testing/xds/v3/lrs.proto
-)
-protobuf_generate_grpc_cpp_with_import_path_correction(
   src/proto/grpc/testing/xds/v3/orca_service.proto src/proto/grpc/testing/xds/v3/orca_service.proto
 )
 protobuf_generate_grpc_cpp_with_import_path_correction(
@@ -1084,6 +1072,9 @@ protobuf_generate_grpc_cpp_with_import_path_correction(
 )
 protobuf_generate_grpc_cpp_with_import_path_correction(
   third_party/envoy-api/envoy/service/discovery/v3/discovery.proto envoy/service/discovery/v3/discovery.proto
+)
+protobuf_generate_grpc_cpp_with_import_path_correction(
+  third_party/envoy-api/envoy/service/load_stats/v3/lrs.proto envoy/service/load_stats/v3/lrs.proto
 )
 protobuf_generate_grpc_cpp_with_import_path_correction(
   third_party/envoy-api/envoy/service/status/v3/csds.proto envoy/service/status/v3/csds.proto
@@ -6904,10 +6895,6 @@ endif()
 if(gRPC_BUILD_TESTS)
 
 add_executable(admin_services_end2end_test
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.h
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.h
@@ -7184,6 +7171,10 @@ add_executable(admin_services_end2end_test
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.h
@@ -27122,10 +27113,6 @@ add_executable(pre_stop_hook_server_test
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.pb.h
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.grpc.pb.h
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.h
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.h
@@ -27402,6 +27389,10 @@ add_executable(pre_stop_hook_server_test
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.h
@@ -38249,18 +38240,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -38465,6 +38444,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -39296,18 +39287,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -39516,6 +39495,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -40261,18 +40252,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -40477,6 +40456,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -40910,22 +40901,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.h
@@ -41218,6 +41193,22 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -41533,18 +41524,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -41749,6 +41728,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -42382,18 +42373,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -42598,6 +42577,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -42912,18 +42903,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -43136,6 +43115,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -43450,18 +43441,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -43670,6 +43649,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -43984,18 +43975,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -44204,6 +44183,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/http_11_proxy/v3/upstream_http_11_connect.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/http_11_proxy/v3/upstream_http_11_connect.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/http_11_proxy/v3/upstream_http_11_connect.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -46638,18 +46629,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -46862,6 +46841,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -47176,18 +47167,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -47400,6 +47379,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/http/stateful_session/cookie/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/http/stateful_session/cookie/v3/cookie.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/http/stateful_session/cookie/v3/cookie.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -47805,18 +47796,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -48029,6 +48008,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/pick_first/v3/pick_first.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/pick_first/v3/pick_first.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/pick_first/v3/pick_first.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -48344,18 +48335,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -48564,6 +48543,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -48887,18 +48878,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -49103,6 +49082,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -49820,18 +49811,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -50044,6 +50023,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -50358,18 +50349,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -50598,6 +50577,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -50914,18 +50905,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -51154,6 +51133,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h
@@ -51465,10 +51456,6 @@ add_executable(xds_stats_watcher_test
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.pb.h
   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/test.grpc.pb.h
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.cc
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.pb.h
-  ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/admin/v3/certs.pb.h
@@ -51745,6 +51732,10 @@ add_executable(xds_stats_watcher_test
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/transport_sockets/tls/v3/tls_spiffe_validator_config.grpc.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.cc
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.pb.h
+  ${_gRPC_PROTO_GENS_DIR}/envoy/service/status/v3/csds.grpc.pb.h
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.grpc.pb.cc
   ${_gRPC_PROTO_GENS_DIR}/envoy/type/matcher/v3/address.pb.h
@@ -52048,18 +52039,6 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.pb.h
     ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/simple_messages.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/ads.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/discovery.grpc.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.cc
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.pb.h
-    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/annotations/deprecation.pb.h
@@ -52272,6 +52251,18 @@ if(_gRPC_PLATFORM_LINUX OR _gRPC_PLATFORM_MAC OR _gRPC_PLATFORM_POSIX)
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/wrr_locality/v3/wrr_locality.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/wrr_locality/v3/wrr_locality.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/extensions/load_balancing_policies/wrr_locality/v3/wrr_locality.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/ads.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/discovery/v3/discovery.grpc.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.cc
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.pb.h
+    ${_gRPC_PROTO_GENS_DIR}/envoy/service/load_stats/v3/lrs.grpc.pb.h
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.grpc.pb.cc
     ${_gRPC_PROTO_GENS_DIR}/envoy/type/http/v3/cookie.pb.h

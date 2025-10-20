@@ -31,13 +31,13 @@
 #include "envoy/config/endpoint/v3/endpoint.pb.h"
 #include "envoy/config/listener/v3/listener.pb.h"
 #include "envoy/config/route/v3/route.pb.h"
+#include "envoy/service/discovery/v3/ads.grpc.pb.h"
+#include "envoy/service/discovery/v3/discovery.pb.h"
+#include "envoy/service/load_stats/v3/lrs.grpc.pb.h"
 #include "src/core/lib/address_utils/parse_address.h"
 #include "src/core/util/crash.h"
 #include "src/core/util/grpc_check.h"
 #include "src/core/util/sync.h"
-#include "src/proto/grpc/testing/xds/v3/ads.grpc.pb.h"
-#include "src/proto/grpc/testing/xds/v3/discovery.pb.h"
-#include "src/proto/grpc/testing/xds/v3/lrs.grpc.pb.h"
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/end2end/counted_service.h"
 #include "absl/container/flat_hash_map.h"
@@ -58,7 +58,7 @@ constexpr char kEdsTypeUrl[] =
 
 // An ADS service implementation.
 class AdsServiceImpl
-    : public CountedService<::envoy::service::discovery::v3::
+    : public CountedService<::envoy::service::discovery::v3::grpc::
                                 AggregatedDiscoveryService::CallbackService>,
       public std::enable_shared_from_this<AdsServiceImpl> {
  public:
@@ -309,7 +309,7 @@ class AdsServiceImpl
 
 // An LRS service implementation.
 class LrsServiceImpl
-    : public CountedService<::envoy::service::load_stats::v3::
+    : public CountedService<::envoy::service::load_stats::v3::grpc::
                                 LoadReportingService::CallbackService>,
       public std::enable_shared_from_this<LrsServiceImpl> {
  public:
