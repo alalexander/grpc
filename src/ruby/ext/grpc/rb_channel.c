@@ -783,7 +783,7 @@ void grpc_rb_channel_polling_thread_start() {
   GPR_ASSERT(g_channel_polling_cq == NULL);
 
   g_channel_polling_cq = grpc_completion_queue_create_for_next(NULL);
-  g_channel_polling_thread = rb_thread_create(run_poll_channels_loop, NULL);
+  g_channel_polling_thread = RB_THREAD_CREATE(run_poll_channels_loop, NULL);
 
   if (!RTEST(g_channel_polling_thread)) {
     gpr_log(GPR_ERROR, "GRPC_RUBY: failed to spawn channel polling thread");
