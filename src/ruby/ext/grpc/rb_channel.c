@@ -38,16 +38,6 @@
 #include <grpc/support/log.h>
 #include <grpc/support/time.h>
 
-#if RUBY_API_VERSION_CODE < 30500
-// Ruby < 3.0 expects VALUE (*)(void*)
-static VALUE run_poll_channels_loop_wrapper(void *arg) {
-    return run_poll_channels_loop(arg);
-}
-#define RB_THREAD_CREATE(func, arg) rb_thread_create(run_poll_channels_loop_wrapper, arg)
-#else
-#define RB_THREAD_CREATE(func, arg) rb_thread_create(func, arg)
-#endif
-
 /* id_channel is the name of the hidden ivar that preserves a reference to the
  * channel on a call, so that calls are not GCed before their channel.  */
 static ID id_channel;
